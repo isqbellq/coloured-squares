@@ -1,1 +1,1 @@
-# coloured-squares
+# Coloured-squares
