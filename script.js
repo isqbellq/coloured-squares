@@ -13,16 +13,12 @@ function blackBackground() {
 	$(this).animate({ backgroundColor:"#222"}, 10000);
 }
 
-function changeCSS() {
-	$(this).css({ backgroundColor: randomColor()}, 100);
-}
-
 
 $(document).ready(function() {
 
 	$(".square").mouseover(colorBackground).mouseout(blackBackground);
 
-	$(".square").click(changeCSS);
+	$(".square").click(colorBackground);
 
 	randomColor();
 
