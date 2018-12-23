@@ -1,22 +1,28 @@
 "use strict"
 
-let randomColor = function() {
+function randomColor() {
 	let number = '#' + Math.floor(Math.random() * 16777215).toString(16);
 	return number;
 };
 
+function colorBackground() {
+	$(this).animate({ backgroundColor: randomColor()}, 100);
+}
+
+function blackBackground() {
+	$(this).animate({ backgroundColor:"#222"}, 10000);
+}
+
+function changeCSS() {
+	$(this).css({ backgroundColor: randomColor()}, 100);
+}
+
 
 $(document).ready(function() {
 
-	$(".square").mouseover(function() {
-		$(this).animate({ backgroundColor: randomColor()}, 100);
-	}).mouseout(function() {
-		$(this).animate({ backgroundColor:"#222"}, 10000);
-	});
+	$(".square").mouseover(colorBackground).mouseout(blackBackground);
 
-	$(".square").click(function() {
-		$(this).css({ backgroundColor: randomColor()}, 100);
-	});
+	$(".square").click(changeCSS);
 
 	randomColor();
 
@@ -47,5 +53,4 @@ $(document).ready(function() {
 			return "#99f9f2";
 		};
 	}; */
-
 });
