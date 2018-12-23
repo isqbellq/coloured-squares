@@ -1,6 +1,13 @@
 "use strict"
 
+let randomColor = function() {
+	let number = '#' + Math.floor(Math.random() * 16777215).toString(16);
+	return number;
+};
+
+
 $(document).ready(function() {
+
 	$(".square").mouseover(function() {
 		$(this).animate({ backgroundColor: randomColor()}, 100);
 	}).mouseout(function() {
@@ -11,10 +18,7 @@ $(document).ready(function() {
 		$(this).css({ backgroundColor: randomColor()}, 100);
 	});
 
-	let randomColor = function() {
-		let number = '#' + Math.floor(Math.random() * 16777215).toString(16);
-		return number;
-	};
+	randomColor();
 
 	/* let randomColor = function() {
 		let number = Math.floor(Math.random() * 11);
